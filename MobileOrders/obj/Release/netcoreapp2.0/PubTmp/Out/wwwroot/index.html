@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>JWT в ASP.NET Core Web API</title>
+</head>
+<body>
+	<div class="userInfo" style="display:none;">
+		<p>Вы вошли как: <span class="userName"></span></p>
+		<input type="button" value="Выйти" id="logOut" />
+	</div>
+	<div class="loginForm">
+		<h3>Вход на сайт</h3>
+		<label>Введите code</label><br />
+		<input id="agentCode" /> <br /><br />
+		<label>Введите password</label><br />
+		<input id="password" /> <br /><br />
+		<label>Введите ID</label><br />
+		<input id="mobileID" /><br /><br />
+		<input type="submit" id="submitLogin" value="Логин" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getDataByLogin" value="api/Values/getlogin" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getCustomers" value="api/Customers" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getGroups" value="api/Groups" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getDocs" value="api/Docs" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getInvoices" value="api/Invoices" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getItems" value="api/Items" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getPayHistory" value="api/PayHistory" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getPlans" value="api/Plans" />
+	</div>
+	<div>
+		<input class="test" type="submit" id="getPrices" value="api/Prices" />
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+        var tokenKey = "accessToken";
+        $('#submitLogin').click(function (e) {
+            e.preventDefault();
+            var loginData = {
+                //grant_type: 'password',
+				agentCode: $('#agentCode').val(),
+				password: $('#password').val(),
+				mobileID: $('#mobileID').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: 'api/token',
+                data: loginData
+            }).success(function (data) {
+                $('.userName').text(data.username);
+                $('.userInfo').css('display', 'block');
+                $('.loginForm').css('display', 'none');
+                // сохраняем в хранилище sessionStorage токен доступа
+                sessionStorage.setItem(tokenKey, data.access_token);
+                console.log(data.access_token);
+            }).fail(function (data) {
+                console.log(data);
+            });
+        });
+
+        $('#logOut').click(function (e) {
+            e.preventDefault();
+            $('.loginForm').css('display', 'block');
+            $('.userInfo').css('display', 'none');
+            sessionStorage.removeItem(tokenKey);
+        });
+
+		$('input.test').click(function (e) {
+			var url = $(this).val();
+            e.preventDefault();
+            $.ajax({
+                type: 'GET',
+				url: url,
+                beforeSend: function (xhr) {
+
+                    var token = sessionStorage.getItem(tokenKey);
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                },
+                success: function (data) {
+					console.log(data);
+                },
+                fail: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+	</script>
+</body>
+</html>

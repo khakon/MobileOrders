@@ -1,0 +1,13 @@
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\MobileOrders.deps.json
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\MobileOrders.runtimeconfig.json
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\MobileOrders.runtimeconfig.dev.json
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\MobileOrders.dll
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\MobileOrders.pdb
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\OrdersRepository.dll
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\bin\Release\netcoreapp2.0\OrdersRepository.pdb
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\obj\Release\netcoreapp2.0\MobileOrders.csprojResolveAssemblyReference.cache
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\obj\Release\netcoreapp2.0\MobileOrders.csproj.CoreCompileInputs.cache
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\obj\Release\netcoreapp2.0\MobileOrders.AssemblyInfoInputs.cache
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\obj\Release\netcoreapp2.0\MobileOrders.AssemblyInfo.cs
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\obj\Release\netcoreapp2.0\MobileOrders.dll
+D:\Users\V.Khakonov\Documents\Visual Studio 2017\Projects\MobileOrders\MobileOrders\obj\Release\netcoreapp2.0\MobileOrders.pdb
